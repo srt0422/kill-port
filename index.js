@@ -9,7 +9,7 @@ module.exports = function (port) {
 
   if (process.platform === 'win32') {
     return sh(
-      `/C Powershell Stop-Process -Id (Get-NetTCPConnection -LocalPort ${port}).OwningProcess -Force`
+      `Powershell Stop-Process -Id (Get-NetTCPConnection -LocalPort ${port}).OwningProcess -Force`
     )
   }
 
